@@ -7,7 +7,8 @@ API de ejemplo para cálculos y registro de historial de llamadas.
 ## Requisitos
 
 * Docker y Docker Compose
-* Java 17+
+* Java 21
+* Spring Boot 3+
 * Maven
 
 ---
@@ -17,8 +18,6 @@ API de ejemplo para cálculos y registro de historial de llamadas.
 Archivo `docker-compose.yml` ejemplo:
 
 ```yaml
-version: '3.8'
-
 services:
   db:
     image: postgres:15
@@ -60,7 +59,7 @@ Realiza un cálculo con dos números y devuelve el resultado, porcentaje y valor
 **Request:**
 
 ```bash
-curl --location 'http://localhost:8080/calculate?num1=20&num2=1'
+curl --location 'http://localhost:8081/calculate?num1=20&num2=1'
 ```
 
 **Response:**
@@ -82,7 +81,7 @@ Obtiene el historial de llamadas realizadas a la API.
 **Request:**
 
 ```bash
-curl --location 'http://localhost:8080/history?page=0'
+curl --location 'http://localhost:8081/history?page=0'
 ```
 
 **Response:**
@@ -132,7 +131,27 @@ curl --location 'http://localhost:8080/history?page=0'
 
 La documentación interactiva de la API está disponible en:
 
-[http://localhost:8081/swagger-ui/index.html#/](http://localhost:8081/swagger-ui/index.html#/)
+[Documentación interactiva](http://localhost:8081/swagger-ui/index.html#/)
+
+---
+
+## Imagen en DockerHub
+
+Para descargar y ejecutar la imagen de Docker de la aplicación desde Docker Hub:
+
+1. Descargar la imagen:
+
+```bash
+docker pull frosales1707/docker-challenge-api:1.0.0
+```
+
+2. Ejecutar la imagen localmente:
+
+```bash
+docker run -p 8080:8081 frosales1707/docker-challenge-api:1.0.0
+```
+
+Esto levantará la aplicación en `http://localhost:8081`.
 
 ---
 
@@ -141,3 +160,11 @@ La documentación interactiva de la API está disponible en:
 * La aplicación está configurada para crear automáticamente las tablas en PostgreSQL al iniciar.
 * Para probar los endpoints podés usar `curl`, Postman o Swagger UI.
 * Cambiá los puertos según tu configuración de `application.yml` si es necesario.
+
+---
+
+## Contacto
+
+### Mail
+
+[fede17rosales@gmail.com](mailto:fede17rosales@gmail.com)
