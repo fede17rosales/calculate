@@ -148,7 +148,7 @@ docker pull frosales1707/docker-challenge-api:1.0.0
 2. Ejecutar la imagen localmente:
 
 ```bash
-docker run -p 8080:8081 frosales1707/docker-challenge-api:1.0.0
+docker run -p 8081:8081 frosales1707/docker-challenge-api:1.0.0
 ```
 
 Esto levantará la aplicación en `http://localhost:8081`.
